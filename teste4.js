@@ -1,6 +1,6 @@
-var data = require('./fakeData');
+import data from "./fakeData.js"
 
-module.exports = function (req, res) {
+function teste4 (req, res) {
     var id = req.query.id;
 
     const reg = data.find((d) => id == id);
@@ -9,3 +9,5 @@ module.exports = function (req, res) {
 
     res.send(reg);
 };
+
+export default teste4
