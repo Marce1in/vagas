@@ -1,7 +1,16 @@
-function teste5 (req, res) {
-    var name = req.query.name;
+import fakeVisitCache from './fakeVisitCache';
 
-    res.send('Usuário ' + name + '  foi lido 0 vezes.');
-};
+function teste5(req, res) {
+    const name = req.query.name;
+    if (!name) {
+        res.status(400).send({ error: 'name parameter is required' });
+    }
 
-export default teste5
+    if (!(name in fakeVisitCache)) {
+        res.send('Usuário ' + name + ' foi lido 0 vezes.');
+    }
+
+    res.send('Usuário ' + name + ' foi lido ' + fakeVisitCache[name] + ' vezes');
+}
+
+export default teste5;
