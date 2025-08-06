@@ -1,15 +1,22 @@
-import data from './fakeData.js'
+import data from './fakeData.js';
 
-export const getUser = (req, res) => {
-    var name = req.query.name;
-
-    for (let i = 0; i < data.length; i++) {
-        if (i.name == name) {
-            res.send(data[i]);
-        }
+export function getUser(req, res) {
+    const name = req.query.name;
+    if (!name) {
+        res.status(400).send({ error: 'name parameter is required' });
     }
-};
 
-export const getUsers = (req, res) => {
+    const user = data.find((user) => user.name === name);
+
+    if (!user) {
+        res.status(404).send({ error: 'User not found' });
+    }
+
+    res.send(user);
+
+    registerUserVisit(name)
+}
+
+export function getUsers(_, res) {
     res.send(data);
-};
+}
