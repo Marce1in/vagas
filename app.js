@@ -14,9 +14,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
     res.send(`get user/ </br>
   get users/ </br>
   post users/ </br>
@@ -33,6 +33,6 @@ app.put('/users', teste4);
 app.get('/users/access', teste5);
 
 const port = 3000;
-app.listen(port, function () {
+app.listen(port, function() {
     console.log('Express server listening on port ' + port);
 });
