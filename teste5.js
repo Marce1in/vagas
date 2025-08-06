@@ -1,4 +1,4 @@
-import fakeVisitCache from './fakeVisitCache';
+import fakeCache from './fakeCache';
 
 function teste5(req, res) {
     const name = req.query.name;
@@ -10,7 +10,7 @@ function teste5(req, res) {
         res.send('Usuário ' + name + ' foi lido 0 vezes.');
     }
 
-    res.send('Usuário ' + name + ' foi lido ' + fakeVisitCache[name] + ' vezes');
+    res.send('Usuário ' + name + ' foi lido ' + fakeCache.visits[name] + ' vezes');
 }
 
 export default teste5;
