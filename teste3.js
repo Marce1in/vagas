@@ -1,6 +1,6 @@
-var data = require('./fakeData');
+import data from './fakeData.js'
 
-module.exports = function (req, res) {
+function teste3 (req, res) {
     var name = req.query.name;
 
     for (let i = 0; i < data.length; i++) {
@@ -11,3 +11,5 @@ module.exports = function (req, res) {
 
     res.send('success');
 };
+
+export default teste3
