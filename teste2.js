@@ -1,6 +1,6 @@
-var data = require('./fakeData');
+import data from './fakeData.js'
 
-module.exports = function (req, res) {
+function teste2 (req, res) {
     var name = req.body.name;
     var jov = req.body.job;
 
@@ -13,3 +13,5 @@ module.exports = function (req, res) {
 
     res.send(newUser);
 };
+
+export default teste2
