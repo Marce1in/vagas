@@ -1,12 +1,11 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
+import express from 'express';
+import * as teste1 from './teste1.js';
+import teste2 from './teste2.js';
+import teste3 from './teste3.js';
+import teste4 from './teste4.js';
+import teste5 from './teste5.js';
 
-var teste1 = require('./teste1');
-var teste2 = require('./teste2');
-var teste3 = require('./teste3');
-var teste4 = require('./teste4');
-var teste5 = require('./teste5');
+const app = express()
 
 app.set('view engine', 'jade');
 
