@@ -1,6 +1,6 @@
-var data = require('./fakeData');
+import data from './fakeData.js'
 
-const getUser = (req, res, next) => {
+export const getUser = (req, res) => {
     var name = req.query.name;
 
     for (let i = 0; i < data.length; i++) {
@@ -10,11 +10,6 @@ const getUser = (req, res, next) => {
     }
 };
 
-const getUsers = (req, res, next) => {
+export const getUsers = (req, res) => {
     res.send(data);
-};
-
-module.exports = {
-    getUser,
-    getUsers,
 };
