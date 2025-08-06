@@ -5,15 +5,11 @@ import teste3 from './teste3.js';
 import teste4 from './teste4.js';
 import teste5 from './teste5.js';
 
-const app = express()
+const app = express();
 
 app.set('view engine', 'jade');
-
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
