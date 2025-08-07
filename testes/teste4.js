@@ -18,7 +18,7 @@ function teste4(req, res) {
 
     const user = data.find((user) => user.id === id);
 
-    if (user.name !== name && isNameAlreadyUsed(name, data)){
+    if (user.name !== name && isNameAlreadyUsed(name, data)) {
         return res
             .status(409)
             .send({ error: `O nome "${name}" já está em uso` });
