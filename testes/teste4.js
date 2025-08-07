@@ -1,3 +1,4 @@
+import { isNameAlreadyUsed } from '../helpers.js';
 import data from '../storage/fakeData.js';
 
 function teste4(req, res) {
@@ -15,7 +16,13 @@ function teste4(req, res) {
         });
     }
 
-    const user = data.find((user) => user.id == id);
+    const user = data.find((user) => user.id === id);
+
+    if (user.name !== name && isNameAlreadyUsed(name, data)){
+        return res
+            .status(409)
+            .send({ error: `O nome "${name}" já está em uso` });
+    }
 
     user.id = id;
     user.name = name;

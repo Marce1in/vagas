@@ -25,3 +25,18 @@ export function registerUserVisit(name) {
 
     fakeCache.visits[name] += 1;
 }
+
+/**
+ * @param {string} name
+ * @param {object[]} data
+ * @param {string} data[].name
+ */
+export function isNameAlreadyUsed(name, data) {
+    const user = data.find((user) => user.name === name);
+
+    if (!user) {
+        return false;
+    } else {
+        return true;
+    }
+}

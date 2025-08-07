@@ -1,5 +1,5 @@
 import data from '../storage/fakeData.js';
-import { findLastUserId } from '../helpers.js';
+import { findLastUserId, isNameAlreadyUsed } from '../helpers.js';
 
 function teste2(req, res) {
     const id = findLastUserId(data) + 1;
@@ -10,6 +10,10 @@ function teste2(req, res) {
         return res
             .status(400)
             .send({ error: 'Parâmetros "name" e "job" são obrigatórios' });
+    } else if (isNameAlreadyUsed(name, data)) {
+        return res
+            .status(409)
+            .send({ error: `O nome "${name}" já está em uso` });
     }
 
     const newUser = {
