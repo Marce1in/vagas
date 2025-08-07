@@ -5,11 +5,11 @@ function teste4(req, res) {
         return res.status(403).send({ error: 'Sem permissão' });
     }
 
-    const id = req.query.id;
+    const id = Number(req.query.id);
     const name = req.body.name;
     const job = req.body.job;
 
-    if (!id || !name || !job) {
+    if (isNaN(id) || !name || !job) {
         return res.status(400).send({
             error: `Parâmetros id, name e job são obrigatórios`,
         });
