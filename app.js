@@ -8,9 +8,6 @@ import * as teste6 from './testes/teste6.js';
 
 const app = express();
 
-app.set('view engine', 'jade');
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', function (_, res) {
