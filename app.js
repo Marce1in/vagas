@@ -8,7 +8,7 @@ import * as teste6 from './testes/teste6.js';
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.json());
 
 app.get('/', function (_, res) {
     return res.send(`get user/ </br>
