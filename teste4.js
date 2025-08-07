@@ -1,6 +1,10 @@
 import data from './fakeData.js';
 
 function teste4(req, res) {
+    if (!req.permissions.canEdit){
+        res.status(403).send({error: 'no permission'})
+    }
+
     const id = req.query.id;
     const name = req.body.name;
     const job = req.body.job;

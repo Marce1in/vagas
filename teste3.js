@@ -1,6 +1,10 @@
 import data from './fakeData.js';
 
 function teste3(req, res) {
+    if (!req.permissions.canDelete){
+        res.status(403).send({error: 'no permission'})
+    }
+
     const name = req.query.name;
     if (!name) {
         res.status(400).send({ error: 'name parameter is required' });
