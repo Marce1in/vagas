@@ -25,7 +25,7 @@ export function authMiddleware(req, res, next) {
 
 export function login(req, res) {
     const editPermission = Boolean(req.body.canEdit);
-    const deletePermission = Boolean(req.body.canEdit);
+    const deletePermission = Boolean(req.body.canDelete);
 
     const permissions = {
         canEdit: editPermission,
