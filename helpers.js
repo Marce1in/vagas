@@ -1,4 +1,4 @@
-import fakeVisitCache from './fakeVisitCache';
+import fakeCache from './storage/fakeCache.js';
 
 // Um pouquinho de JSdoc só para eu ter code completion sem Typescript
 /**
@@ -19,9 +19,9 @@ export function findLastUserId(data) {
  * @param {string} name
  */
 export function registerUserVisit(name) {
-    if (!(name in fakeVisitCache)) {
-        fakeVisitCache[name] = 0;
+    if (!(name in fakeCache.visits)) {
+        fakeCache.visits[name] = 0;
     }
 
-    fakeVisitCache[name] += 1;
+    fakeCache.visits[name] += 1;
 }

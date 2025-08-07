@@ -6,4 +6,4 @@ const fakeData = [
     },
 ];
 
-export default fakeData
+export default fakeData;

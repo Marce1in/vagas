@@ -3,8 +3,8 @@ const fakeCache = {
     visits: { 'João Oliveira': 0 },
     tokens: {
         'example-token': {
-            canEdit: false,
-            canDelete: false,
+            canEdit: true,
+            canDelete: true,
         },
     },
 };

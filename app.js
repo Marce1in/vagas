@@ -1,10 +1,10 @@
 import express from 'express';
-import * as teste1 from './teste1.js';
-import teste2 from './teste2.js';
-import teste3 from './teste3.js';
-import teste4 from './teste4.js';
-import teste5 from './teste5.js';
-import * as teste6 from './teste6.js'
+import * as teste1 from './testes/teste1.js';
+import teste2 from './testes/teste2.js';
+import teste3 from './testes/teste3.js';
+import teste4 from './testes/teste4.js';
+import teste5 from './testes/teste5.js';
+import * as teste6 from './testes/teste6.js';
 
 const app = express();
 
@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.get('/', function(req, res) {
-    res.send(`get user/ </br>
+app.get('/', function (_, res) {
+    return res.send(`get user/ </br>
   get users/ </br>
   post users/ </br>
   delete users/ </br>
@@ -32,6 +32,6 @@ app.get('/users/access', teste5);
 app.post('/login', teste6.login);
 
 const port = 3000;
-app.listen(port, function() {
+app.listen(port, function () {
     console.log('Express server listening on port ' + port);
 });
